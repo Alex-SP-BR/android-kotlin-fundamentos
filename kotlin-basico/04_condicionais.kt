@@ -1,9 +1,13 @@
 fun main() {
+
     println("Digite a idade:")
     val input = readLine()
 
-    if (input != null) {
-        val idade = input.toInt()
+    val idade = input?.toIntOrNull()
+
+    if (idade == null) {
+        println("Entrada inválida")
+    } else {
 
         if (idade < 12) {
             println("Criança")
@@ -12,7 +16,5 @@ fun main() {
         } else {
             println("Adulto")
         }
-    } else {
-        println("Entrada inválida")
     }
 }
